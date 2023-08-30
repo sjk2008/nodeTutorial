@@ -5,7 +5,7 @@ const EmployeeController = require('../controllers/EmployeeControllers')
 const upload = require('../middleware/upload')
 const authenticate = require('../middleware/authenticate')
 
-router.get('/', authenticate, EmployeeController.index)
+router.get('/', EmployeeController.index)
 router.post('/show',EmployeeController.show)
 router.post('/store',upload.single('avatar'), EmployeeController.store)
 router.post('/update',EmployeeController.update)
